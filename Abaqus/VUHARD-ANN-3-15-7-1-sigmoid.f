@@ -3,32 +3,19 @@ C Function to compute the ANN : 3-15-7-1-sigmoid yield stress
 C **********************************************************************
       subroutine vuhard (
 C Read only -
-     1     nblock,
-     2     nElement, nIntPt, nLayer, nSecPt,
-     3     lAnneal, stepTime, totalTime, dt, cmname,
-     4     nstatev, nfieldv, nprops,
-     5     props, tempOld, tempNew, fieldOld, fieldNew,
-     6     stateOld,
-     7     eqps, eqpsRate,
+     +  nblock, nElement, nIntPt, nLayer, nSecPt, lAnneal, stepTime,
+     +  totalTime, dt, cmname, nstatev, nfieldv, nprops, props,
+     +  tempOld, tempNew, fieldOld, fieldNew, stateOld, eqps, eqpsRate,
 C Write only -
-     8     yield, dyieldDtemp, dyieldDeqps,
-     9     stateNew )
+     +  yield, dyieldDtemp, dyieldDeqps, stateNew)
 C
       include 'vaba_param.inc'
 C
-      dimension nElement(nblock),
-     1     props(nprops),
-     2     tempOld(nblock),
-     3     fieldOld(nblock,nfieldv),
-     4     stateOld(nblock,nstatev),
-     5     tempNew(nblock),
-     6     fieldNew(nblock,nfieldv),
-     7     eqps(nblock),
-     8     eqpsRate(nblock),
-     9     yield(nblock),
-     1     dyieldDtemp(nblock),
-     2     dyieldDeqps(nblock,2),
-     3     stateNew(nblock,nstatev)
+      dimension nElement(nblock), props(nprops), tempOld(nblock),
+     +  fieldOld(nblock,nfieldv), stateOld(nblock,nstatev),
+     +  tempNew(nblock), fieldNew(nblock,nfieldv), eqps(nblock),
+     +  eqpsRate(nblock), yield(nblock), dyieldDtemp(nblock),
+     +  dyieldDeqps(nblock,2), stateNew(nblock,nstatev)
 C
       character*80 cmname
 C
